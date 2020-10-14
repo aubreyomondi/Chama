@@ -1,4 +1,4 @@
-package com.example.app;
+package com.mobilefintech16.chama;
 
 import org.junit.Test;
 
