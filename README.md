@@ -1,6 +1,6 @@
 ## Chama's Develop Branch
 
-Contains working the project's working code.
+Contains the project's working code.
 
 When assigned an issue, create a new feature branch and work on it there. 
 
