@@ -62,24 +62,24 @@ public class MainActivity extends AppCompatActivity {
     }
     private void setupOnboardingItems(){
         List<OnBoardingItem> onBoardingItems = new ArrayList<>();
-        OnBoardingItem itemPayOnline = new OnBoardingItem();
-        itemPayOnline.setTitle("Open Your Chama Account 1");
-        itemPayOnline.setDescription("Chamas will make you better persons ");
-        itemPayOnline.setImage(R.drawable.web_hi_res_512);
+        OnBoardingItem pictureOne = new OnBoardingItem();
+        pictureOne.setTitle("We are your partner. We share your vision. Go Ahead!");
+        pictureOne.setDescription("Join a Chama, Save Money, Borrow and much more...");
+        pictureOne.setImage(R.drawable.picture_one);
 
-        OnBoardingItem itemOnTheWay = new OnBoardingItem();
-        itemOnTheWay.setTitle("Open Your Chama Account on he way 2");
-        itemOnTheWay.setDescription("Chamas will make you better personsfasfja");
-        itemOnTheWay.setImage(R.drawable.web_hi_res_512);
+        OnBoardingItem pictureTwo = new OnBoardingItem();
+        pictureTwo.setTitle("You'll Never Walk Alone!");
+        pictureTwo.setDescription("We create foundational steps for you");
+        pictureTwo.setImage(R.drawable.picture_two);
 
-        OnBoardingItem itemEatTogether = new OnBoardingItem();
-        itemEatTogether.setTitle("Open Your Chama Account on he way 3");
-        itemEatTogether.setDescription("Chamas will make you better personsfasfja");
-        itemEatTogether.setImage(R.drawable.web_hi_res_512);
+        OnBoardingItem pictureThree = new OnBoardingItem();
+        pictureThree.setTitle("Excellent Customer Support");
+        pictureThree.setDescription("We will be there whenever you need us");
+        pictureThree.setImage(R.drawable.pictures_three);
 
-        onBoardingItems.add(itemPayOnline);
-        onBoardingItems.add(itemOnTheWay);
-        onBoardingItems.add(itemEatTogether);
+        onBoardingItems.add(pictureOne);
+        onBoardingItems.add(pictureTwo);
+        onBoardingItems.add(pictureThree);
 
         onBoardingAdapter = new OnBoardingAdapter(onBoardingItems);
     }
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         if(index == onBoardingAdapter.getItemCount() - 1){
-            buttonOnBoardingAction.setText("LOGIN");
+            buttonOnBoardingAction.setText("LOG IN");
         }else{
             buttonOnBoardingAction.setText("NEXT");
         }
