@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AndroidStudioProjects.Chama.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AndroidStudioProjects.Chama.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Chama.iml" filepath="$PROJECT_DIR$/.idea/modules/Chama.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Chama.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Chama.app.iml" />
     </modules>
   </component>
 </project>
