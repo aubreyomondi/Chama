@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">Chama</string>
+    <string name="create_chama">CREATE CHAMA</string>
+    <string name="send_invite">Send Invite</string>
+    <string name="chama_name">Chama Name</string>
+    <string name="frequency_of_payment">Frequency of Payment</string>
+    <string name="invite">Invite</string>
+    <string name="cancel">Cancel</string>
+    <string name="amount_to_contribute">Amount to Contribute</string>
+    <string name="create">Create</string>
+    <string name="todo">TODO</string>
+    <string-array name="frequency_spinner">
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+        <item>Yearly</item>
+    </string-array>
 </resources>
