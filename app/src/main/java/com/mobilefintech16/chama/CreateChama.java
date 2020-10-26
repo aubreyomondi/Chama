@@ -8,11 +8,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class CreateChama extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
  private Button button;
+ EditText create_chama;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +28,33 @@ public class CreateChama extends AppCompatActivity implements AdapterView.OnItem
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
+        //  Text entry passing the data input for Chama creation
 
+        create_chama =findViewById(R.id.create_chama);
+
+        //Create button
+        Button button1=(Button) findViewById(R.id.create_button) ;
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String namechama=create_chama.getText().toString();
+                Intent intent = new Intent(CreateChama.this,HomeActivity.class);
+                intent.putExtra("create_chama",namechama);
+                startActivity(intent);
+            }
+        });
         //Cancel button
+        Button button=(Button) findViewById(R.id.cancel_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent =new Intent(CreateChama.this,HomeActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
 
 
     }
