@@ -35,7 +35,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/username_text_layout"
+            android:id="@+id/username_text"
             android:hint="Username"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
@@ -46,11 +46,10 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/password_text_layout"
+            android:id="@+id/password_text"
             android:hint="Password"
             app:passwordToggleEnabled="true"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
@@ -63,6 +62,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            android:id="@+id/forget_password_btn"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:background="#00000000"
@@ -73,6 +73,7 @@
             android:layout_margin="5dp"/>
 
         <Button
+            android:id="@+id/login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="LOGIN"
@@ -91,7 +92,6 @@
             android:layout_gravity="right"
             android:elevation="0dp"
             android:layout_margin="5dp"/>
-
 
     </LinearLayout>
 

@@ -120,13 +120,15 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/signup_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SIGN UP"
-        android:background="@color/purple_200"
-        android:textColor="@color/white"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp"
+        android:background="@color/purple_200"
+        android:onClick="registerUser"
+        android:text="SIGN UP"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/call_login_btn"
