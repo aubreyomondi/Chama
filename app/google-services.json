@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "527802794305",
+    "firebase_url": "https://chama-70517.firebaseio.com",
+    "project_id": "chama-70517",
+    "storage_bucket": "chama-70517.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527802794305:android:b53123d45ebfc6c8c361c0",
+        "android_client_info": {
+          "package_name": "com.mobilefintech16.chama"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527802794305-vpcoc323k6f0d615h9a2j9vibjn3ne2p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlHuxH-ZzuVZwHosqVcdPUN0N0widrVB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527802794305-vpcoc323k6f0d615h9a2j9vibjn3ne2p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

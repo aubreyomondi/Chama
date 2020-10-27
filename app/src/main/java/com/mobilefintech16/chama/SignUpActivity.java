@@ -10,11 +10,14 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
     TextInputLayout full_name_text, username_text, id_text, phone_text, email_text, password_text;
     Button callLogin;
-    //String fullName, username, nationalId, phoneNo, email, password;
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
         phone_text = (TextInputLayout) findViewById(R.id.phone_text);
         email_text = (TextInputLayout) findViewById(R.id.email_text);
         password_text = (TextInputLayout) findViewById(R.id.password_text);
+        callLogin = (Button) findViewById(R.id.call_login_btn);
     }
 
     private Boolean validateFullName(){
@@ -163,5 +167,21 @@ public class SignUpActivity extends AppCompatActivity {
         String phoneNo = phone_text.getEditText().getText().toString();
         String email = email_text.getEditText().getText().toString();
         String password = password_text.getEditText().getText().toString();
+
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference("users");
+
+        UserHelperClass userHelperClass = new UserHelperClass(fullName, username, nationalId, phoneNo, email, password);
+
+        reference.child(nationalId).setValue(userHelperClass);
+
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        intent.putExtra("fullName", fullName);
+        intent.putExtra("username", username);
+        intent.putExtra("nationalId", nationalId);
+        intent.putExtra("phoneNo", phoneNo);
+        intent.putExtra("email", email);
+        intent.putExtra("password", password);
+        startActivity(intent);
     }
 }
