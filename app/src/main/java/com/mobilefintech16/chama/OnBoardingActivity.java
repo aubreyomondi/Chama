@@ -54,7 +54,7 @@ public class OnBoardingActivity extends AppCompatActivity {
                 if(onboardingViewPager.getCurrentItem() + 1 < onBoardingAdapter.getItemCount()){
                     onboardingViewPager.setCurrentItem(onboardingViewPager.getCurrentItem() + 1);
                 }else{
-                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                    startActivity(new Intent(getApplicationContext(), SignUpActivity.class));
                     finish();
                 }
             }
@@ -115,7 +115,7 @@ public class OnBoardingActivity extends AppCompatActivity {
             }
         }
         if(index == onBoardingAdapter.getItemCount() - 1){
-            buttonOnBoardingAction.setText("LOG IN");
+            buttonOnBoardingAction.setText("Sign Up");
         }else{
             buttonOnBoardingAction.setText("NEXT");
         }
