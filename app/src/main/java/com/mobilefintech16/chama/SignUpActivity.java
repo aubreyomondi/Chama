@@ -13,7 +13,7 @@ import com.google.android.material.textfield.TextInputLayout;
 
 public class SignUpActivity extends AppCompatActivity {
     TextInputLayout full_name_text, username_text, id_text, phone_text, email_text, password_text;
-    Button signUp, callLogin;
+    Button callLogin;
     //String fullName, username, nationalId, phoneNo, email, password;
 
     @Override
