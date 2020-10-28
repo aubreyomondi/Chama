@@ -12,12 +12,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.hbb20.CountryCodePicker;
 
 public class SignUpActivity extends AppCompatActivity {
     TextInputLayout full_name_text, username_text, id_text, phone_text, email_text, password_text;
     Button callLogin;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
+    CountryCodePicker countryCodePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,7 @@ public class SignUpActivity extends AppCompatActivity {
         email_text = (TextInputLayout) findViewById(R.id.email_text);
         password_text = (TextInputLayout) findViewById(R.id.password_text);
         callLogin = (Button) findViewById(R.id.call_login_btn);
+        countryCodePicker = (CountryCodePicker) findViewById(R.id.country_code_picker);
     }
 
     private Boolean validateFullName(){
@@ -160,22 +163,25 @@ public class SignUpActivity extends AppCompatActivity {
             return;
         }
 
-        // Get all values as strings
+        //Get complete phone number
+        String userEnteredPhoneNumber = phone_text.getEditText().getText().toString().trim();
+        //Remove first zero if entered!
+        if (userEnteredPhoneNumber.charAt(0) == '0') {
+            userEnteredPhoneNumber = userEnteredPhoneNumber.substring(1);
+        }
+        //Complete phone number
+        // "+" + countryCodePicker.getFullNumber()
+        String phoneNo = countryCodePicker.getSelectedCountryCodeWithPlus() + userEnteredPhoneNumber;
+
+        //Get the Phone No from phone no field in String
         String fullName = full_name_text.getEditText().getText().toString();
         String username = username_text.getEditText().getText().toString();
         String nationalId = id_text.getEditText().getText().toString();
-        String phoneNo = phone_text.getEditText().getText().toString();
         String email = email_text.getEditText().getText().toString();
         String password = password_text.getEditText().getText().toString();
 
-        rootNode = FirebaseDatabase.getInstance();
-        reference = rootNode.getReference("users");
-
-        UserHelperClass userHelperClass = new UserHelperClass(fullName, username, nationalId, phoneNo, email, password);
-
-        reference.child(nationalId).setValue(userHelperClass);
-
-        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+        //Call the next activity and pass phone no with it
+        Intent intent = new Intent(getApplicationContext(), VerifyPhoneActivity.class);
         intent.putExtra("fullName", fullName);
         intent.putExtra("username", username);
         intent.putExtra("nationalId", nationalId);
@@ -183,5 +189,29 @@ public class SignUpActivity extends AppCompatActivity {
         intent.putExtra("email", email);
         intent.putExtra("password", password);
         startActivity(intent);
+
+        // Get all values as strings
+//        String fullName = full_name_text.getEditText().getText().toString();
+//        String username = username_text.getEditText().getText().toString();
+//        String nationalId = id_text.getEditText().getText().toString();
+//        String phoneNo = phone_text.getEditText().getText().toString();
+//        String email = email_text.getEditText().getText().toString();
+//        String password = password_text.getEditText().getText().toString();
+//
+//        rootNode = FirebaseDatabase.getInstance();
+//        reference = rootNode.getReference("users");
+//
+//        UserHelperClass userHelperClass = new UserHelperClass(fullName, username, nationalId, phoneNo, email, password);
+//
+//        reference.child(nationalId).setValue(userHelperClass);
+//
+//        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+//        intent.putExtra("fullName", fullName);
+//        intent.putExtra("username", username);
+//        intent.putExtra("nationalId", nationalId);
+//        intent.putExtra("phoneNo", phoneNo);
+//        intent.putExtra("email", email);
+//        intent.putExtra("password", password);
+//        startActivity(intent);
     }
 }

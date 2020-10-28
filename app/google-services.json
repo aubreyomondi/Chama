@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "527802794305-6b8ad6ko8g5ft403lcgpt3u7f3ld83no.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mobilefintech16.chama",
+            "certificate_hash": "b57ae19319ed457d1c531ca9b7ef67acfffddaf7"
+          }
+        },
+        {
           "client_id": "527802794305-vpcoc323k6f0d615h9a2j9vibjn3ne2p.apps.googleusercontent.com",
           "client_type": 3
         }

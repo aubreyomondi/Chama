@@ -119,6 +119,7 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("phoneNo", phoneNo);
                         intent.putExtra("email", email);
                         intent.putExtra("password", password);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     } else {
                         progressBar.setVisibility(View.GONE);
